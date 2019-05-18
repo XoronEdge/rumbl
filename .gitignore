@@ -37,5 +37,4 @@ npm-debug.log
 
 /config/dev.exs
 /config/prod.secret.exs
-.elixir_ls/dialyzer_manifest_22.0_elixir-1.8.2_test
-.elixir_ls/dialyzer_manifest_22.0_elixir-1.8.2_test
+config/dev.exs
