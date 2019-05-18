@@ -2,13 +2,8 @@ use Mix.Config
 
 # Configure your database
 config :rumbl, Rumbl.Repo,
-<<<<<<< HEAD
-  username: "postgres",
-  password: "postgres",
-=======
   username: "root",
   password: "polomolo",
->>>>>>> 66a0ab21076017cecf2e45504459d2d4b279e6ea
   database: "rumbl_dev",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,
