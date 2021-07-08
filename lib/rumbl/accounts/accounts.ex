@@ -5,7 +5,7 @@ defmodule Rumbl.Accounts do
   alias Rumbl.Repo
   alias Rumbl.Accounts.User
   alias Rumbl.Accounts.Credential
-  import Pbkdf2
+  import Pbkdf2, only: [check_pass: 2, no_user_verify: 0]
   import Ecto.Query, warn: false
 
   def get_user(id) do
@@ -148,14 +148,14 @@ defmodule Rumbl.Accounts do
     user = get_user_by_email(email)
 
     cond do
-      user && Pbkdf2.check_pass(given_pass, user.credential.password_hash) ->
+      user && check_pass(given_pass, user.credential.password_hash) ->
         {:ok, user}
 
       user ->
         {:error, :unauthorized}
 
       true ->
-        Pbkdf2.no_user_verify()
+        no_user_verify()
         {:error, :not_found}
     end
   end
